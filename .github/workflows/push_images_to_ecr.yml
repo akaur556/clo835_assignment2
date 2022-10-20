@@ -42,11 +42,11 @@ jobs:
         
         # Docker tag 
         docker tag my_app $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        docker tag my_db $ECR_REGISTRY1/$ECR_REPOSITORY1:$IMAGE_TAG1
+        docker tag my_db $ECR_REGISTRY/$ECR_REPOSITORY1:$IMAGE_TAG1
         
         # Unit test
         docker run -d -p 80:8080 --name my_app $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        docker run -d -p 88:8080 --name my_db $ECR_REGISTRY1/$ECR_REPOSITORY1:$IMAGE_TAG1
+        docker run -d -p 88:8080 --name my_db $ECR_REGISTRY/$ECR_REPOSITORY1:$IMAGE_TAG1
         
         docker ps
         echo "Pause for 10 seconds to let container start"
@@ -54,5 +54,5 @@ jobs:
         
         # Docker push
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        docker push $ECR_REGISTRY1/$ECR_REPOSITORY1:$IMAGE_TAG1
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY1:$IMAGE_TAG1
       

@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    run: mysql
+    tier: backend
   name: mysql
   namespace: mysql-ns
 spec:

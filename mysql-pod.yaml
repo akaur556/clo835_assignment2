@@ -4,6 +4,7 @@ metadata:
   labels:
     run: mysql
   name: mysql
+  namespace: mysql-ns
 spec:
   containers:
   - image: 940156990945.dkr.ecr.us-east-1.amazonaws.com/clo835-mysql-repo:db

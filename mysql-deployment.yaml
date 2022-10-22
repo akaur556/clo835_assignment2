@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  labels:
+    tier: backend
+spec:
+  selector:
+    matchLabels:
+     tier : backend
+  template:
+    metadata:
+      labels:
+        tier: backend
+    spec:
+      containers:
+      - image: imageURI
+        name: mysql
+        ports:
+        - containerPort: 3306

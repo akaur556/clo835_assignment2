@@ -3,10 +3,10 @@ kind: ReplicaSet
 metadata:
   name: backend
   labels:
-    app: webapp
+    app: mysql
     tier: backend
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       tier: backend
@@ -17,4 +17,9 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: ImageURI
+        image: 940156990945.dkr.ecr.us-east-1.amazonaws.com/clo835-mysql-repo:db
+        ports:
+        - containerPort: 3306
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: pw

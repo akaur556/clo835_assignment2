@@ -4,15 +4,22 @@ metadata:
   labels:
     run: webapp
   name: webapp
+  namespace: webapp-ns
 spec:
   containers:
   - image: 940156990945.dkr.ecr.us-east-1.amazonaws.com/clo835-app-repo:app
     imagePullPolicy: IfNotPresent
     name: webapp
-    resources: {}
     ports:
-    - containerPort: 8081
+    - containerPort: 8080
+      protocol: TCP
     env:
     - name: DBHOST
-      value: 10.244.0.8
+      value: "10.244.0.8"
+    - name: DBPORT
+      value: "3306"
+    - name: DBUSER
+      value: root
+    - name: DBPWD
+      value: pw
       

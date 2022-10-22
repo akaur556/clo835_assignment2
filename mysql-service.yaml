@@ -2,13 +2,12 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mysql
+  namespace: mysql-ns
   labels:
-    name: mysql
-    tier: backend
+    app: mysql
 spec:
   ports:
   - port: 3306
     targetPort: 3306
   selector:
-    name: mysql
-    tier: backend
+    app: mysql

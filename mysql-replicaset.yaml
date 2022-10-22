@@ -1,19 +1,18 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: backend
+  name: backend-mysql
   labels:
     app: mysql
-    tier: backend
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      tier: backend
+      app: mysql
   template:
     metadata:
       labels:
-        tier: backend
+        app: mysql
     spec:
       containers:
       - name: mysql

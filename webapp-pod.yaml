@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: mysql
+  name: mysql
+spec:
+  containers:
+  - image: 940156990945.dkr.ecr.us-east-1.amazonaws.com/clo835-mysql-repo:db
+    imagePullPolicy: IfNotPresent
+    name: mysql
+    resources: {}
+    ports:
+    - containerPort: 3306
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always

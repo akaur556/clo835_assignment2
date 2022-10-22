@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    run: webapp
+    app: employees
   name: webapp
   namespace: webapp-ns
 spec:

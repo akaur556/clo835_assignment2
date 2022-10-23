@@ -31,8 +31,8 @@ jobs:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: clo835-app-repo
         ECR_REPOSITORY1: clo835-mysql-repo 
-        IMAGE_TAG: app
-        IMAGE_TAG1: db
+        IMAGE_TAG: app_v1.1
+        IMAGE_TAG1: db_v1.1
         
       run: |
         

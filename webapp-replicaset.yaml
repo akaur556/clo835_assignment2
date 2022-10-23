@@ -20,7 +20,7 @@ spec:
         image: 940156990945.dkr.ecr.us-east-1.amazonaws.com/clo835-app-repo:app
         ports:
         - containerPort: 8080
-          Protocol: TCP
+          protocol: TCP
         env: 
         - name: DBHOST
           value: "10.244.0.14"
